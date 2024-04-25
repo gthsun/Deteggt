@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deteggt - Roundworm Egg Counting Application</title>
+  <link rel="icon" type="image/x-icon" href="https://pngimg.com/d/worms_PNG3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Reddit+Mono:wght@200..900&display=swap"
+    rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+  <div class="title-border2">
+    <h1>RESULTS</h1>
+  </div>
+  <div class="results">
+    <h1>{{ final_string }}</h1>
+    <img id="annotated-image" src="{{ url_for('static', filename='images/' + annotated_image) }}" alt="Annotated Image">
+    <form action="{{ url_for('home') }}" method="GET"> <!-- Changed action to the URL of the index route -->
+      <button class="return-button">Return</button>
+    </form>
+  </div>
+  <script>
+    // Reload the page when the form is submitted
+    document.getElementById("return-form").addEventListener("submit", function (event) {
+      location.reload();
+    });
+  </script>
+</body>
+
+</html>

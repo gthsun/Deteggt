@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deteggt - Roundworm Egg Counting Application</title>
+  <link rel="icon" type="image/x-icon" href="https://pngimg.com/d/worms_PNG3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Reddit+Mono:wght@200..900&display=swap"
+    rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+  <div class="title-border">
+    <h1>DETEGGT</h1>
+    <p>Stay informed, stay dewormed</p>
+  </div>
+  <div class="container">
+    <form method='POST' enctype='multipart/form-data'>
+      <h3>Submit a file</h3>
+      {{form.hidden_tag()}}
+      {{form.file(id="image-input")}}
+      <p>Only .png, .jpg, and .jpeg image files are accepted</p>
+      {{form.submit(id="upload-button")}}
+    </form>
+    <h3 class="purpose">Why use Deteggt?</h3>
+    <p>Parasites such as Roundworms are a common issues in the agriculture industry, often causing illness and lowering
+      production among farm animals.
+      While dewormers are a common practice to eliminate parasites, excessive usage leads to parasites developing
+      resistance.</p>
+
+    <p>Deteggt utilizes the YOLOv8 model to analyze an inputted image of an animal’s fecal sample to determine the
+      number of parasitical eggs present. Using the information presented, farmers may make informed decisions on
+      whether
+      or not to use dewormers on their animals.</p>
+
+    <h4>Deteggt should not be used as a final deciding factor. It merely exists to assist you in making informed
+      decisions.</h4>
+    <div id="loading"></div>
+  </div>
+  <script>
+    document.getElementById("upload-button").addEventListener("click", (event) => {
+      const fileInput = document.getElementById("image-input");
+
+      if (fileInput.files.length > 0) {
+        document.getElementById("loading").innerHTML = "<h2>Loading...</h2>";
+      } else {
+        alert("Please select a file first.");
+        event.preventDefault();
+      }
+    }); 
+  </script>
+
+</body>
+
+</html>

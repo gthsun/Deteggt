@@ -1,0 +1,167 @@
+::file-selector-button {
+  display: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Reddit Mono", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  height: 100vh;
+  background-image: url('https://i.shgcdn.com/e04e8a8c-8385-46e9-8aa4-80836f8b9c0e/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.title-border {
+  font-size: 20px;
+  font-family: "Lexend", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #b16558;
+  color: #fff;
+  text-align: center;
+  border: 10px solid #9c5649
+}
+
+.title-border2 {
+  font-size: 10px;
+  font-family: "Lexend", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #b16558;
+  color: #fff;
+  text-align: center;
+  border: 5px solid #9c5649
+}
+
+.container {
+  text-align: center;
+  width: 75%;
+  border: 2px solid #9c5649;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 172px;
+}
+
+.results {
+  color: darkred;
+  text-align: center;
+  width: 50%;
+  border: 2px solid #9c5649;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.return-button {
+  transition: all .1s ease-in-out;
+  font-family: "Reddit Mono", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  align-items: center;
+  padding: 5px 10px;
+  width: 50%;
+  font-size: 1rem;
+  color: white;
+  background-color: #b16558;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#image-input {
+  transition: all .1s ease-in-out;
+  text-align: center;
+  font-family: "Reddit Mono", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  align-items: center;
+  padding: 30px 45px;
+  width: 14%;
+  font-size: 1.2rem;
+  background-color: #b16558;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#upload-button {
+  transition: all .1s ease-in-out;
+  font-family: "Reddit Mono", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  align-items: center;
+  padding: 5px 10px;
+  width: 180px;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  border-color: black;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+#loading {
+  color: darkred;
+}
+
+.purpose {
+  margin-top: 40px;
+}
+
+#annotated-image {
+  width: 30%;
+  height: auto;
+  border: 2px solid #9c5649;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.return-button:hover,
+#image-input:hover {
+  color: white;
+  background-color: #9c5649;
+  font-size: x-large;
+  transition: all .1s ease-in-out;
+}
+
+#upload-button:hover {
+  color: white;
+  background-color: #231310;
+  font-size: x-large;
+  transition: all .1s ease-in-out;
+}
