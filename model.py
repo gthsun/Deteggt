@@ -8,20 +8,9 @@ from clear import delete
 
 #Returns a list containing all the files stored in the inputted directory
 def list_files(directory):
-    """
-    Function to list all files in a directory and its subdirectories.
-
-    Args:
-    - directory: The path to the directory to list files from.
-
-    Returns:
-    - A list containing the filepaths of all objects in the directory.
-    """
     file_paths = []
-    #Walk through all files and directories within the specified directory
     for root, _, files in os.walk(directory):
         for file in files:
-            #Construct the full filepath by joining the root path and the filename
             file_path = os.path.join(root, file)
             file_paths.append(file_path)
     return file_paths
@@ -34,7 +23,7 @@ if file_list:
     custom_configuration = InferenceConfiguration(confidence_threshold=0.5)
     CLIENT = InferenceHTTPClient(
         api_url="https://detect.roboflow.com",
-        api_key="YOUR-API-KEY-HERE"
+        api_key="YOUR-API-KEY"
     )
 
     with CLIENT.use_configuration(custom_configuration):
